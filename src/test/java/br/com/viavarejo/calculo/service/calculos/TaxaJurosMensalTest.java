@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import br.com.viavarejo.calculo.model.TaxaJurosDiario;
 import br.com.viavarejo.calculo.service.Calcular;
+import br.com.viavarejo.calculo.service.calculos.util.CalcularUtil;
 
 public class TaxaJurosMensalTest {
 
@@ -37,8 +38,7 @@ public class TaxaJurosMensalTest {
 	
 	@Test
 	public void testeValor() {
-		Calcular parcela = new TaxaJurosMensal(getList());
-		System.out.println(parcela.calcular());
+		Calcular parcela = CalcularUtil.getTaxaJurosMensal(getList());
 		Assert.assertTrue(parcela.calcular().equals(new BigDecimal(5).setScale(1, RoundingMode.HALF_UP)));
 	}
 }
