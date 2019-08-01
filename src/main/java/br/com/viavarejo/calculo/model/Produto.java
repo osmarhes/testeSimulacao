@@ -3,6 +3,10 @@ package br.com.viavarejo.calculo.model;
 import java.math.BigDecimal;
 
 public class Produto {
+	private Integer codigo;
+	private String nome;
+	private BigDecimal valor;
+	
 	public Integer getCodigo() {
 		return codigo;
 	}
@@ -26,9 +30,5 @@ public class Produto {
 	public void setValor(BigDecimal valor) {
 		this.valor = valor;
 	}
-
-	private Integer codigo;
-	private String nome;
-	private BigDecimal valor;
 
 }

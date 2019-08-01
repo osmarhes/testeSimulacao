@@ -47,8 +47,6 @@ public class CalculoServiceTests {
 			Assert.assertTrue(parcela.getValor().equals(new BigDecimal(180.29).setScale(2, RoundingMode.HALF_UP)));
 			Assert.assertTrue(parcela.getTaxaJurosAoMes().equals(new BigDecimal(0.738600).setScale(6, RoundingMode.HALF_UP)));
 		});
-		
-		System.out.println(parcelas);
 	}
 
 	private Simulacao getSimulacaoSemJuros() {
