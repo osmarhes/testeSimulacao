@@ -41,12 +41,13 @@ public class CalculoServiceTests {
 	public void testeServiceComJuros() {
 		List<Parcela> parcelas = service.calculaParcelas(getSimulacaoComJuros());
 		Assert.assertEquals(parcelas.size(), 7);
-		IntStream.range(0, parcelas.size()).forEach(index -> {
+		for (int index = 0; index < parcelas.size(); index++) {
 			Parcela parcela = parcelas.get(index);
-			Assert.assertTrue(parcela.getNumeroParcela().equals(index + 1));
-			Assert.assertTrue(parcela.getValor().equals(new BigDecimal(180.29).setScale(2, RoundingMode.HALF_UP)));
-			Assert.assertTrue(parcela.getTaxaJurosAoMes().equals(new BigDecimal(0.738600).setScale(6, RoundingMode.HALF_UP)));
-		});
+			Assert.assertEquals(parcela.getNumeroParcela(), new Integer(index + 1));
+			Assert.assertEquals(parcela.getValor(), (new BigDecimal(177.40
+			  ).setScale(2, RoundingMode.HALF_UP)));
+			Assert.assertEquals(parcela.getTaxaJurosAoMes(), (new BigDecimal(0.497438).setScale(6, RoundingMode.HALF_UP)));
+		}
 	}
 
 	private Simulacao getSimulacaoSemJuros() {

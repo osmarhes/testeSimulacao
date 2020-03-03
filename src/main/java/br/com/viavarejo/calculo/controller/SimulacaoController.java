@@ -17,6 +17,7 @@ import br.com.viavarejo.calculo.service.CalculadoraService;
 @RequestMapping("/simular")
 public class SimulacaoController {
 
+
 	@Autowired
 	private CalculadoraService calculadora;
 	
